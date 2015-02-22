@@ -22,7 +22,7 @@ void flash_lights()
   {
     if(f_on[i])
     {
-      r = 50;
+      r = 51;
       break;
     }
   }
@@ -31,7 +31,7 @@ void flash_lights()
   {
     if(f_on[i])
     {
-      g = 50;
+      g = 51;
       break;
     }
   }
@@ -40,7 +40,7 @@ void flash_lights()
   {
     if(f_on[i])
     {
-      b = 50;
+      b = 51;
       break;
     }
   }
@@ -49,9 +49,9 @@ void flash_lights()
   analogWrite(10, g);
   analogWrite(11, b);
   
-  if(r > 0) r -= 2;
-  if(g > 0) g -= 2;
-  if(b > 0) b -= 2;
+  if(r > 0) r -= 3;
+  if(g > 0) g -= 3;
+  if(b > 0) b -= 3;
 }
 
 void setup() 
@@ -111,7 +111,7 @@ void loop()
         e_avg = float(sum) * E_HISTORY_F;
         
         // Compare Energies for Beat in Subband
-        if(e_inst > 10*e_avg)
+        if(e_inst > 7.0*e_avg)
           f_on[j] = 1;
         else 
           f_on[j] = 0;
